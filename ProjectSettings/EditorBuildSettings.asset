@@ -4,5 +4,20 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Livel_1.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Livel_2.unity
+    guid: 652e111855e9f8041bd68a8b8afab799
+  - enabled: 1
+    path: Assets/Scenes/livel_3.unity
+    guid: 57c1c38070bbe834f9708b382ff71100
+  - enabled: 1
+    path: Assets/Scenes/Livel_4.unity
+    guid: 9e8b394a1dee31542bbde8019841d75b
+  - enabled: 1
+    path: Assets/Scenes/Livel_5.unity
+    guid: f1d6342a7b2aa2e44b580982493c7795
   m_configObjects: {}

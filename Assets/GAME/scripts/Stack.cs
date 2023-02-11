@@ -1,20 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Stack : MonoBehaviour
 {
     [SerializeField] Rigidbody rb;
     [SerializeField] GameObject Object;
     [SerializeField] Stack<GameObject> brickUp = new Stack<GameObject>();
+    [SerializeField] private GameObject gameController;
 
+    private int nextSceneToLoad;
     private Vector3 currentTranform;
     private Vector3 stack = new Vector3(0, 0.25f, 0);
 
     int count = 0;
+
+
     void Awake()
     {
         currentTranform = new Vector3(0, transform.position.y, 0);
+        nextSceneToLoad = SceneManager.GetActiveScene().buildIndex + 1;
     }
     void Update()
     {
@@ -28,6 +34,7 @@ public class Stack : MonoBehaviour
         {
             if (hit.collider.tag == "brick")
             {
+                Debug.Log("brick");
                 GameObject obj = Instantiate(Object, new Vector3(transform.position.x, transform.position.y - count * stack.y, transform.position.z), Quaternion.identity) as GameObject;
                 brickUp.Push(obj);
                 transform.position += stack;// tăng độ cao nhân vật
@@ -41,11 +48,17 @@ public class Stack : MonoBehaviour
                 Destroy(hit.collider.gameObject);
                 RemoveBrick();
             }
-            else if (hit.collider.tag == "bridge_end")
+            else if (hit.collider.tag == "bridge_finish")
             {
                 Destroy(hit.collider.gameObject);
                 ClearBrick();
             }
+             else if (hit.collider.tag == "Finish")
+               {
+                Debug.Log("hi");
+                
+                SceneManager.LoadScene(nextSceneToLoad);
+               }
         }
     }
     private void RemoveBrick()
@@ -55,9 +68,9 @@ public class Stack : MonoBehaviour
     }
     private void ClearBrick()
     {
-        transform.position -= new Vector3(0, 0.75f, 0);
-        Destroy(brickUp.Pop());
-        Destroy(brickUp.Pop());
-        Destroy(brickUp.Pop());
+        for(int i = 1; i < count;i++)
+        {
+           RemoveBrick();
+        }
     }
-}   
+}

@@ -12,6 +12,8 @@ TagManager:
   - NegativeBrick
   - bridge
   - bridge_end
+  - bridge_finish
+  - finish
   layers:
   - Default
   - TransparentFX
