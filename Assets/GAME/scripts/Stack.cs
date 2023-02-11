@@ -73,4 +73,9 @@ public class Stack : MonoBehaviour
            RemoveBrick();
         }
     }
+    public void ResetGame11()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Debug.Log("resat");
+    }
 }

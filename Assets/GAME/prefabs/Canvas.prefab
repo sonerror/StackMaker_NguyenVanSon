@@ -109,8 +109,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -435, y: 879}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -447.03415, y: 869}
+  m_SizeDelta: {x: 124.0683, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1187363920830314281
 CanvasRenderer:
@@ -265,8 +265,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -294, y: 878.1796}
-  m_SizeDelta: {x: 125.6857, y: 101.64}
+  m_AnchoredPosition: {x: -285.81226, y: 869.0019}
+  m_SizeDelta: {x: 142.0612, y: 119.9956}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1669853979191174707
 CanvasRenderer:
@@ -289,7 +289,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.066037714, g: 0.066037714, b: 0.066037714, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -350,10 +350,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8297207919058027794}
-        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
-        m_MethodName: 
-        m_Mode: 5
+      - m_Target: {fileID: 6583747342554571147}
+        m_TargetAssemblyTypeName: UIControl, Assembly-CSharp
+        m_MethodName: ResetGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -453,6 +453,7 @@ GameObject:
   - component: {fileID: 8081053662887349246}
   - component: {fileID: 4339186244620763030}
   - component: {fileID: 1820169155535140889}
+  - component: {fileID: 6583747342554571147}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -544,3 +545,16 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &6583747342554571147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8297207919058027794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7654b3b8819ae3840b91b0fa7eb37db9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameManagerment: {fileID: 0}
