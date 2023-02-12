@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Play.unity
+    path: Assets/Scenes/Start.unity
     guid: f6e643b1c1e6cb248b61dfb6597ed2ec
   - enabled: 1
     path: Assets/Scenes/Livel_1.unity
@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Livel_5.unity
     guid: f1d6342a7b2aa2e44b580982493c7795
+  - enabled: 1
+    path: Assets/Scenes/Win.unity
+    guid: cfb04851c41e516439f9146537b74aac
   m_configObjects: {}

@@ -15,8 +15,6 @@ public class Stack : MonoBehaviour
     private Vector3 stack = new Vector3(0, 0.25f, 0);
 
     int count = 0;
-
-
     void Awake()
     {
         currentTranform = new Vector3(0, transform.position.y, 0);
@@ -32,7 +30,7 @@ public class Stack : MonoBehaviour
         Debug.DrawLine(transform.position, transform.position + Vector3.down * 100f, color: Color.red);
         if (Physics.Raycast(transform.position, Vector3.down, out hit, 100f))
         {
-            if (hit.collider.tag == "brick")
+            if (hit.collider.tag == TagGame.BRICK)
             {
                 Debug.Log("brick");
                 GameObject obj = Instantiate(Object, new Vector3(transform.position.x, transform.position.y - count * stack.y, transform.position.z), Quaternion.identity) as GameObject;
@@ -42,23 +40,28 @@ public class Stack : MonoBehaviour
                 obj.transform.SetParent(transform);
                 count++;
             }
-            else if (hit.collider.tag == "bridge")
+            else if (hit.collider.tag == TagGame.BRIDGE)
             {
                 count--;
                 Destroy(hit.collider.gameObject);
                 RemoveBrick();
             }
-            else if (hit.collider.tag == "bridge_finish")
+            else if (hit.collider.tag == TagGame.BRIDGE_FINISH)
             {
-                Destroy(hit.collider.gameObject);
+               Destroy(hit.collider.gameObject);
                 ClearBrick();
             }
-             else if (hit.collider.tag == "Finish")
+             else if (hit.collider.tag == TagGame.FINISH)
                {
+               // StartCoroutine(CanvasWin());
                 Debug.Log("hi");
-                
+                Invoke(nameof(UIControl.FinishLivel),5f);
                 SceneManager.LoadScene(nextSceneToLoad);
-               }
+            }
+/*            else if (hit.collider.tag == TagGame.FINISHWIN)
+            {
+                SceneManager.LoadScene(nextSceneToLoad);
+            }*/
         }
     }
     private void RemoveBrick()
@@ -68,14 +71,16 @@ public class Stack : MonoBehaviour
     }
     private void ClearBrick()
     {
-        for(int i = 1; i < count;i++)
+        for(int i = 1; i < count ; i++)
         {
            RemoveBrick();
         }
     }
-    public void ResetGame11()
+/*    public IEnumerator CanvasWin()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        Debug.Log("resat");
-    }
+        
+        SceneManager.LoadScene("Win");
+        yield return new WaitForSeconds(5.0f);
+        //SceneManager.LoadScene(nextSceneToLoad);
+    }*/
 }

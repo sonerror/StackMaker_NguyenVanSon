@@ -8,12 +8,12 @@ TagManager:
   - Caro
   - ground
   - PositiveBrick
-  - brick
   - NegativeBrick
+  - Brick
+  - Bridge
+  - Bridge_Finish
+  - brick
   - bridge
-  - bridge_end
-  - bridge_finish
-  - finish
   layers:
   - Default
   - TransparentFX
