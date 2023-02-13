@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class UIControl : MonoBehaviour
 {
     [SerializeField] Text textLivel;
-    [SerializeField] private GameObject canVasFinishLivel;
+    [SerializeField] private GameObject canvasFinishLevel;
 
     private void Start()
     {
@@ -16,7 +16,7 @@ public class UIControl : MonoBehaviour
     private void Oninit()
     {
         GetLivel();
-        canVasFinishLivel.SetActive(false);
+        canvasFinishLevel.SetActive(false);
         Time.timeScale = 1;
     }
     public void GetLivel()
@@ -35,7 +35,7 @@ public class UIControl : MonoBehaviour
     }
     public void FinishLivel()
     {
-        canVasFinishLivel.SetActive(true);
+        canvasFinishLevel.SetActive(true);
         Time.timeScale = 0;
     }
 }

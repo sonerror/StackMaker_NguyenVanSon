@@ -32,7 +32,7 @@ public class Stack : MonoBehaviour
         {
             if (hit.collider.tag == TagGame.BRICK)
             {
-                Debug.Log("brick");
+                //Debug.Log("brick");
                 GameObject obj = Instantiate(Object, new Vector3(transform.position.x, transform.position.y - count * stack.y, transform.position.z), Quaternion.identity) as GameObject;
                 brickUp.Push(obj);
                 transform.position += stack;// tăng độ cao nhân vật
@@ -40,18 +40,18 @@ public class Stack : MonoBehaviour
                 obj.transform.SetParent(transform);
                 count++;
             }
-            else if (hit.collider.tag == TagGame.BRIDGE)
+            else if (hit.collider.CompareTag(TagGame.BRIDGE))
             {
                 count--;
                 Destroy(hit.collider.gameObject);
                 RemoveBrick();
             }
-            else if (hit.collider.tag == TagGame.BRIDGE_FINISH)
+            else if (hit.collider.CompareTag(TagGame.BRIDGE_FINISH))
             {
                Destroy(hit.collider.gameObject);
                 ClearBrick();
             }
-             else if (hit.collider.tag == TagGame.FINISH)
+             else if (hit.collider.CompareTag(TagGame.FINISH))
                {
                // StartCoroutine(CanvasWin());
                 Debug.Log("hi");
